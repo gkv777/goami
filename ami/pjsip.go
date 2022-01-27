@@ -37,6 +37,13 @@ func PJSIPUnregister(ctx context.Context, client Client, actionID, registration 
 	})
 }
 
+// PJSIPShowAors list pjsip aors.
+func PJSIPShowAor(ctx context.Context, client Client, actionID, endpoint string) ([]Response, error) {
+	return requestList(ctx, client, "PJSIPShowAors", actionID, "AorList", "AorListComplete", map[string]string{
+		"Endpoint": endpoint,
+	})
+}
+
 // PJSIPShowEndpoint detaill listing of an endpoint and its objects.
 func PJSIPShowEndpoint(ctx context.Context, client Client, actionID, endpoint string) ([]Response, error) {
 	return requestList(ctx, client, "PJSIPShowEndpoint", actionID, "EndpointDetail", "EndpointDetailComplete", map[string]string{
