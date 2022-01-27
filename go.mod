@@ -1,4 +1,4 @@
-module github.com/heltonmarx/goami
+module github.com/gkv777/goami
 
 go 1.12
 
